@@ -4,7 +4,7 @@
 Madyson Bradford
 | Homework  | Labs  | Project |
 | ------------- |:------------:|:-----------------|
-| Homework 1         |[link](Homework/week01/Readme.md)| Lab 1 |[link](Lab/week01/Readme.md)| Project |[link](Project)|
+| Homework 1 |[link](https://github.com/MadysonBradford/madyson-GEOG478/blob/main/Homework/Readme.md)| Lab 1 |[link](Lab/week01/Readme.md)| Project |[link](Project)|
 | Homework 2         |[link](Homework/week02/Readme.md)| Lab 2 |[link](Lab/week02/Readme.md)|
 | Homework 3         |[link](Homework/Week03/Readme.md)| Lab 3 |[link](Lab/week03/Readme.md)|
 | Homework 4         |[link](Homework/Week04/Readme.md)| Lab 4 |[link](Lab/week04/Readme.md)|
