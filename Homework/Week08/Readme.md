@@ -1,3 +1,3 @@
-## <Homework 8>
-### <Madyson Bradford>
+## Homework 8
+### Madyson Bradford
 description here
