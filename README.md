@@ -2,7 +2,7 @@
 # for WebGIS coursework at TAMU Spring 2022
 
 Madyson Bradford
-| Homework  | links  | Lab | links | Project |
+| Homework  | links  | Lab | links | Project | links |
 |:-------------:|:------------:|:---------:|:-------------:|:------------:|:---------:|
 | Homework 1 |[link](https://github.com/MadysonBradford/madyson-GEOG478/tree/main/Homework/Week01)| Lab 1 |[link](https://github.com/MadysonBradford/madyson-GEOG478/tree/main/Lab/Week01)| Project |[link](Project)|
 | Homework 2 |[link](https://github.com/MadysonBradford/madyson-GEOG478/tree/main/Homework/Week02)| Lab 2 |[link](https://github.com/MadysonBradford/madyson-GEOG478/tree/main/Lab/Week02)|
