@@ -1,3 +1,3 @@
 ## Lab 2
 ### Madyson Bradford
-lab description
+ArcGIS Online lab: LInk to crated Web Application and image from Collector App. 
