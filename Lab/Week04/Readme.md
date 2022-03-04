@@ -1,3 +1,3 @@
 ## Lab 4
 ### Madyson Bradford
-lab description
+Lab 4: Creating JSON objects, functions, and finding a bounding box when given coordinates.
