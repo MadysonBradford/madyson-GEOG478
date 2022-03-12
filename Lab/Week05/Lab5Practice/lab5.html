@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html>
     <head>
-        <title>Lab 5 Leaflet</title>
+        <title>Madyson's Lab 5 Web Map</title>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin=""/>
@@ -10,43 +10,55 @@
         crossorigin=""></script>
     </head> 
         <body>
-            <div id="mapid" style = "height: 500px" ></div>
+
+            <div id="map" style = "height: 500px"></div>
+
             <script> 
-            var map = L.map('mapid').setView([51.505, -0.09], 13);
-                L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                attribution: '<a href="https://www.mapbox.com">Mapbox</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+
+            var map = L.map('map').setView([30.6155, -96.3380], 15);
+
+            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                 maxZoom: 18,
                 id: 'mapbox/streets-v11',
                 tileSize: 512,
                 zoomOffset: -1,
-                accessToken: 'pk.eyJ1IjoibWFkeXNvbmJyYWRmb3JkIiwiYSI6ImNsMDhsaDBrMDA0anIzam50a2U4aHFxc2kifQ.dpsLiS98uhYSWG9cV2XWIA',
+                accessToken: 'pk.eyJ1IjoibWFkeXNvbmJyYWRmb3JkIiwiYSI6ImNsMDhsaDBrMDA0anIzam50a2U4aHFxc2kifQ.dpsLiS98uhYSWG9cV2XWIA'
+            }).addTo(map)
+            
+            var popup = L.popup();
+
+            function onMapClick(e) {
+                popup
+                    .setLatLng(e.latlng)
+                    .setContent("You clicked the map at " + e.latlng.toString())
+                    .openOn(map);
+            }
+
+            map.on('click', onMapClick);
+
+            var circle = L.circle([30.6099, -96.3404], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: 250
             }).addTo(map);
-            </script>
 
-            <script>
-                var marker = L.marker([51.5, -0.09]).addTo(map);
-                var circle = L.circle([51.508, -0.11], {
-                    color:'red',
-                    fillColor:'#f03',
-                    fillOpacity:0.5,
-                    radius:500
-                }).addTo(map);
-                var polygon = L.polygon([
-                    [51.509, -0.08],
-                    [51.503, -0.06],
-                    [51.51, -0.047]
-                ]).addTo(map);
-                
-                marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-                circle.bindPopup("I am a circle.");
-                polygon.bindPopup("I am a polygon.");
-
-                function onMapClick(e) {
-                alert("You clicked the map at " + e.latlng);
+            var myIcon = L.Icon.extend({
+                options: {
+                    iconSize:     [60,60],
+                    iconAnchor:   [22, 94],
+                    popupAnchor:  [-3, -76]
                 }
-                map.on('click', onMapClick);
+            });
 
-                mymap.locate({setView: true, maxZoom:16});
+            var om = new myIcon({iconUrl: 'https://atmo.tamu.edu/images/oandm.jpg'}),
+            academic_building = new myIcon({iconUrl: 'https://today.tamu.edu/wp-content/uploads/2019/09/151020_Pano_0397.jpg'})
+
+            L.marker([30.6177, -96.3366], {icon: om}).addTo(map).bindPopup("O&M Building!");
+            L.marker([30.6158, -96.3408], {icon: academic_building}).addTo(map).bindPopup("Academic Building!");
+
+
 
             </script>
 
