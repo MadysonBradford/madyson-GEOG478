@@ -76,6 +76,15 @@
             L.geoJSON(myLines).addTo(map);
             L.geoJSON(myPolys).addTo(map);
 
+            var myStyle = {
+                "color":"#ff7800",
+                "weight":5,
+                "opacity":0.65
+            };
+            L.geoJSON(myLines, {
+                style:myStyle
+            }).addTo(map);
+
         </script>
     </body>
 
