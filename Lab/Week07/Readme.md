@@ -1,3 +1,3 @@
 ## Lab 7
 ### Madyson Bradford
-lab description
+Making Story Maps in ArcGIS Online
