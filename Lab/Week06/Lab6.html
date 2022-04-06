@@ -36,13 +36,13 @@
     </head>
     <body>
 
-        <div id="mapid" style = "height: 500px"></div>
+        <div id="mapid" style = "height: 600px"></div>
         
         <script type="text/javascript" src="https://leafletjs.com/SlavaUkraini/examples/choropleth/us-states.js"></script>
         <script type="text/javascript" src="./TAMU_Building.js"></script>
        <script>
 
-            var map = L.map('mapid').setView([30.6187,-96.3365], 11);
+            var map = L.map('mapid').setView([30.6150,-96.3450], 14);
             L.geoJSON(statesData).addTo(map);
             L.geoJSON(tamu).addTo(map);
 
@@ -56,13 +56,13 @@
             }).addTo(map)
 
             function getColor(d) {
-                return d > 1000 ? '#800026' :
-                    d > 5000  ? '#BD0026' :
-                    d > 4000  ? '#E31A1C' :
-                    d > 3000  ? '#FC4E2A' :
-                    d > 2000   ? '#FD8D3C' :
-                    d > 1500   ? '#FEB24C' :
-                    d > 0   ? '#FED976' :
+                return d > 5500 ? '#800026' :
+                    d > 4000  ? '#BD0026' :
+                    d > 2000  ? '#E31A1C' :
+                    d > 1500  ? '#FC4E2A' :
+                    d > 1000  ? '#FD8D3C' :
+                    d > 500  ? '#FEB24C' :
+                    d > 0     ? '#FED976' :
                                 '#FFEDA0';
             }
 
@@ -128,8 +128,8 @@
 
         // method that we will use to update the control based on feature properties passed
         info.update = function (props) {
-            this._div.innerHTML = '<h4>Texas A&M University Campus</h4>' +  (props ?
-                '<b>' + props.BldgAbbr + '</b><br />' + props.BldgName + ' people / mi<sup>2</sup>'
+            this._div.innerHTML = '<h4>Texas A&M University Campus: Building Numbers</h4>' +  (props ?
+                '<b>' + props.BldgAbbr + '</b><br />' + props.BldgName 
                 : 'Hover over a building');
         }; 
         info.addTo(map);
@@ -140,14 +140,15 @@
 
             var div = L.DomUtil.create('div', 'info legend'),
                 grades = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000],
-                labels = [];
+                labels = ['<strong> Building Numbers </strong>'];
 
-            // loop through our density intervals and generate a label with a colored square for each interval
+
             for (var i = 0; i < grades.length; i++) {
                 div.innerHTML +=
                     '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
                     grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
             }
+           
 
             return div;
         };
