@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <titleMadyson Bradford Lab 6 Leaflet></title>
+        <title Madyson Bradford TAMU Map></title>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin=""/>
@@ -42,7 +42,7 @@
        
        <script>
 
-            var map = L.map('mapid').setView([37.8,-96], 4);
+            var map = L.map('mapid').setView([30.6187,-96.3365], 10);
             L.geoJSON(statesData).addTo(map);
 
             L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
