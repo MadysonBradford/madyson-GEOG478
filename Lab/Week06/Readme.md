@@ -1,3 +1,3 @@
 ## Lab 6
 ### Madyson Bradford
-lab description
+Built a custom Leaflet Map of Texas A&M Campus, coloured by Building Number.
